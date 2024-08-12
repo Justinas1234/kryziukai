@@ -1,0 +1,14 @@
+from game import Game
+
+def main():
+    """Main function to start the Tic-Tac-Toe game."""
+    game = Game()
+    while True:
+        game.play()
+        play_again = input("Do you want to play again? (yes/no): ").strip().lower()
+        if play_again != 'yes':
+            print("Thank you for playing!")
+            break
+
+if __name__ == "__main__":
+    main()

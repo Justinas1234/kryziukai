@@ -1,0 +1,15 @@
+from typing import List
+
+class Player:
+    def __init__(self, marker: str):
+        self.marker: str = marker
+
+    def get_move(self, possible_choices: List[int]) -> int:
+        """Gets a valid move from the player."""
+        move = -1
+        while move not in possible_choices:
+            try:
+                move = int(input(f"Choose your move from {possible_choices}: "))
+            except ValueError:
+                print("Invalid input. Please enter a number corresponding to an available position.")
+        return move
